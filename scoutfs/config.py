@@ -20,7 +20,7 @@ class ScoutFSConfig:
         # Base URL for the ScoutFS API
         "api_url": os.environ.get(
             "SCOUTFS_API_URL",
-            f"https://{os.environ.get('SCOUTFS_API_HOST', 'hsm.dmawi.de')}:"
+            f"https://{os.environ.get('SCOUTFS_API_HOST', 'my.scoutfs.host')}:"
             f"{os.environ.get('SCOUTFS_API_PORT', '8080')}/"
             f"v{os.environ.get('SCOUTFS_API_VERSION', '1')}",
         ),
