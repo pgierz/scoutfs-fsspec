@@ -1,5 +1,5 @@
 import os
-from typing import Dict, Any, Optional, Union
+from typing import Any, Dict, Optional, Union
 
 
 class ScoutFSConfig:
@@ -28,11 +28,16 @@ class ScoutFSConfig:
         "username": os.environ.get("SCOUTFS_USERNAME"),
         "password": os.environ.get("SCOUTFS_PASSWORD"),
         # SSL/TLS settings
-        "ssl_verify": os.environ.get("SCOUTFS_SSL_VERIFY", "False").lower() == "true",
+        "ssl_verify": os.environ.get("SCOUTFS_SSL_VERIFY", "False").lower()
+        == "true",
         "ssl_cert": os.environ.get("SCOUTFS_SSL_CERT"),
         # Timeout settings (in seconds)
-        "connect_timeout": float(os.environ.get("SCOUTFS_CONNECT_TIMEOUT", "30.0")),
-        "request_timeout": float(os.environ.get("SCOUTFS_REQUEST_TIMEOUT", "300.0")),
+        "connect_timeout": float(
+            os.environ.get("SCOUTFS_CONNECT_TIMEOUT", "30.0")
+        ),
+        "request_timeout": float(
+            os.environ.get("SCOUTFS_REQUEST_TIMEOUT", "300.0")
+        ),
         # Retry settings
         "max_retries": int(os.environ.get("SCOUTFS_MAX_RETRIES", "3")),
         "retry_delay": float(os.environ.get("SCOUTFS_RETRY_DELAY", "1.0")),
