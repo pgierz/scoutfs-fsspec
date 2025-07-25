@@ -1,0 +1,25 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+-   repo: https://github.com/psf/black
+    rev: 22.3.0
+    hooks:
+    -   id: black
+-   repo: https://github.com/pre-commit/mirrors-isort
+    rev: v5.5.0
+    hooks:
+    -   id: isort
+        additional_dependencies: [toml]
+-   repo: https://github.com/executablebooks/mdformat/
+    rev: 0.7.5
+    hooks:
+    -   id: mdformat
+        additional_dependencies:
+        - mdformat-black
+        - mdformat_tables
+- repo: https://github.com/codespell-project/codespell
+  rev: v2.3.0
+  hooks:
+  - id: codespell
+    additional_dependencies:
+    - tomli
